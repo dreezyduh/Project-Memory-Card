@@ -1,0 +1,65 @@
+body {
+    background: linear-gradient(0deg, rgb(0, 255, 213), black);
+    background-attachment: fixed;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.title, .score {
+    color: aqua;
+    font-size: 18px;
+}
+
+.cardGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.card {
+    background-color: rgb(0, 255, 213);
+    padding: 10px;
+    border: 1px black solid;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.card img {
+    border-radius: 5px;
+    background-color: cadetblue;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .title, .score {
+        font-size: 16px;
+    }
+
+    .cardGrid {
+        gap: 5px;
+    }
+
+    .card {
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .title, .score {
+        font-size: 10px;
+    }
+
+    .cardGrid {
+        gap: 10px;
+    }
+
+    .card {
+        width: 90px;
+    }
+}
