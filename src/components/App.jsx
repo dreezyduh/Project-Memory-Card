@@ -1,7 +1,8 @@
 import { useState } from "react"
-import Header from "./header"
-import Cardgrid from "./Cardgrid";
+import Header from "./components/Header"
+import Cardgrid from "./components/Cardgrid"
 import '../style/App.css'
+
 function App() {
     const [scoreboard, setScore] = useState({
         score: 0,

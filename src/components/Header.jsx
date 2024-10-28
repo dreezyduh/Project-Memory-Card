@@ -1,4 +1,4 @@
-import Scoreboard from "./scoreboard"
+import Scoreboard from "./Scoreboard"
 
 function Header({scoreboard, setScore}) {
     return (
