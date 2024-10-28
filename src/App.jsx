@@ -30,7 +30,7 @@ function App() {
 
     function checkForWin() {
         if (scoreboard.score > scoreboard.bestScore + 1) {
-            scoreboard.bestScore = scoreboard.score;
+            scoreboard.bestScore = scoreboard.score + 1;
         }
         alert('You\'ve won !!')
         setReset(true);
