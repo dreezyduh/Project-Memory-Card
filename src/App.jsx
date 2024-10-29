@@ -2,6 +2,7 @@ import { useState } from "react"
 import Header from "./components/Header"
 import Cardgrid from "./components/Cardgrid"
 import './style/App.css'
+import { useEffect } from "react";
 
 function App() {
     const [scoreboard, setScore] = useState({
@@ -22,19 +23,20 @@ function App() {
     function incrementScore() {
         setScore({...scoreboard, score: scoreboard.score + 1})
         if (scoreboard.score + 1 === 12 ) {
-            checkForWin()
             return
         }
         setReset(false);
     }
 
+    useEffect(() => {
+        checkForWin();
+    }, [scoreboard.score])
+
     function checkForWin() {
-        if (scoreboard.score > scoreboard.bestScore + 1) {
-            scoreboard.bestScore = scoreboard.score + 1;
+        if (scoreboard.score === 12) {
+            alert('You\'ve won !!');
+            restartGame();
         }
-        alert('You\'ve won !!')
-        setReset(true);
-        setScore({...scoreboard, score: 0});
     }
 
 
