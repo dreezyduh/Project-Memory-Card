@@ -3,6 +3,10 @@ body {
     background-attachment: fixed;
 }
 
+#root > div > p {
+    color: rgb(0, 255, 213);
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -11,7 +15,7 @@ body {
 
 .title, .score {
     color: aqua;
-    font-size: 18px;
+    font-size: 0.94vw;
 }
 
 .cardGrid {
@@ -26,7 +30,7 @@ body {
     padding: 10px;
     border: 1px black solid;
     border-radius: 10px;
-    width: 250px;
+    width: 13vw;
     /* height: 300px; */
 }
 

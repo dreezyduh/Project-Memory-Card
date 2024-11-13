@@ -1,31 +1,40 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 
-function Card({img, randomizeArray, restartGame, incrementScore, reset}) {
+function Card(props) {
     const [active, setActive] = useState(false);
     const isActive = active === true
     
     function handleClick() {
         if (!isActive) {
             setActive(!active)
-            incrementScore();
+            props.incrementScore();
         } else {
-            restartGame();
+            props.restartGame();
         }
-        randomizeArray();
+        props.randomizeArray();
     }
 
     useEffect(() => {
-		if (reset) {
+		if (props.reset) {
 			setActive(false);
 		}
-	}, [reset]);
+	}, [props.reset]);
 
     return (
         <div className='card' onClick={handleClick}>
-            <img src={img}/>
+            <img src={props.img}/>
             {/* <span>{title}</span> */}
         </div>
     )
+}
+
+Card.propTypes = {
+    img: PropTypes.string,
+    randomizeArray: PropTypes.func,
+    restartGame: PropTypes.func,
+    incrementScore: PropTypes.func,
+    reset: PropTypes.bool
 }
 
 export default Card

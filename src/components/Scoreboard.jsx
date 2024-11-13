@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 function Scoreboard({scoreboard}) {
     return (
@@ -6,6 +7,10 @@ function Scoreboard({scoreboard}) {
             <div>Best score: {scoreboard.bestScore}</div>
         </div>
     )
+}
+
+Scoreboard.propTypes = {
+    scoreboard: PropTypes.object
 }
 
 export default Scoreboard
